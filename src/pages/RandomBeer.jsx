@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
-//AÑADO IMG DE CABECERA CON ENLACE A HOME/ IMPORTO IMG Y LINK
+//AÑADO E IMPORTO NAVBAR
 function RandomBeer() {
   return (
     <div>
-       <Navbar />
+      <Navbar />
     </div>
   );
 }
