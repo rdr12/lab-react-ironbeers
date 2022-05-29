@@ -1,8 +1,9 @@
 // import React from "react";
-import ImgCabecera from "../assets/encabezado.png";
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Navbar from "../components/Navbar"
+import { Link } from "react-router-dom";
+
 
 function AllBeers() {
   {
@@ -40,10 +41,9 @@ function AllBeers() {
 
   return (
     <div>
-      {/* AÑADO IMG DE CABECERA CON ENLACE A HOME/ IMPORTO IMG Y LINK */}
-      <Link to="/">
-        <img src={ImgCabecera} alt="encabezado" />
-      </Link>
+      
+      <Navbar />
+     
 
       {/* LISTA DE CERVEZAS */}
 

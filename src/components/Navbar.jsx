@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import ImgCabecera from "../assets/encabezado.png";
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
   return (
-    <div>Navbar</div>
+    <div>
+         <Link to="/">
+                <img src={ImgCabecera} alt="encabezado" />
+         </Link>
+    </div>
   )
 }
 
