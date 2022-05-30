@@ -7,21 +7,13 @@ import { Link, useNavigate } from "react-router-dom";
 function AllBeers() {
   // 0. Configurar acceso de navegación, redirecciona al usuario a cualquier lugar
   const navigate = useNavigate();
-  
-    /* 1. Creamos el estado para guardar la info */
-  
-  const [listBeers, setListBeers] = useState(null);
 
-  
-    /* 2. Acceder al componentDidMount que a buscar en la API*/
-  
-  useEffect(() => {
-    getlistBeers();
-  }, []);
+  /* 1. Creamos el estado para guardar la info */
 
-  
-    /* 3. Crear funcion que será la invocación en componentDidMoun con Api */
-  
+  const [listBeers, setListBeers] = useState([]);
+
+  /* 2. Crear funcion que será la invocación en componentDidMoun con Api */
+
   const getlistBeers = async () => {
     //BUSCAMOS LA DATA Y LA GUARDAMOS AL ESTADO
     try {
@@ -36,9 +28,14 @@ function AllBeers() {
     }
   };
 
-  
-    /* 4. Loading  */
-  
+  /* 3. Acceder al componentDidMount que a buscar en la API*/
+
+  useEffect(() => {
+    getlistBeers();
+  }, []);
+
+  /* 4. Loading  */
+
   if (listBeers === null) {
     return <h3>...Loading</h3>;
   }
@@ -53,7 +50,7 @@ function AllBeers() {
         //SELECCIONO QUE DATA QUIERO QUE APAREZCA EN LA LISTA DE CERVEZAS
         listBeers.map((eachBeer) => {
           return (
-            <div key={eachBeer}>
+            <div key={eachBeer._id}>
               <img src={eachBeer.image_url} alt="eachBeer" width="50px" />
               <Link to={`/beer/${eachBeer._id}`}>
                 <h1>{eachBeer.name}</h1>

@@ -7,6 +7,7 @@ import AllBeers from "./pages/AllBeers";
 import SpecificBeer from "./pages/SpecificBeer";
 import RandomBeer from "./pages/RandomBeer";
 import NewBeer from "./pages/NewBeer";
+
 import Error from "./pages/Error";
 import NotFound from "./pages/NotFound";
 
